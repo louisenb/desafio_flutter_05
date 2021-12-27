@@ -2,5 +2,8 @@
     "payInvoice": "Pagar Invoice",
     "currentInvoice": "Fatura Atual",
     "selectAnInstallment": "Selecione uma parcela",
-    "continueProcess": "Continue"
+    "continueProcess": "Continue",
+    "close": "Close",
+    "functionalityNotAccessible": "Essa funcionalidade ainda não esta acessível. Por favor, tente mais tarde.",
+    "attention": "Attention"
 }

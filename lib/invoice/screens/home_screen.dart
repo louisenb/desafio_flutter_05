@@ -9,14 +9,53 @@ class HomeScreen extends StatelessWidget {
 
   HomeScreen({required this.appNavigator}) : super();
 
+  Future<void> _showMenuAlert(context) async {
+    return showDialog<void>(
+      context: context,
+      barrierDismissible: false, // user must tap button!
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text(AppLocalizations.of(context)!.attention),
+          content: SingleChildScrollView(
+            child: ListBody(
+              children: [
+                Text(AppLocalizations.of(context)!.functionalityNotAccessible)
+              ],
+            ),
+          ),
+          actions: <Widget>[
+            TextButton(
+              child: Text(AppLocalizations.of(context)!.close),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: new AppBar(
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          actions: [
+            new IconButton(
+              icon: new Icon (
+                  Icons.account_circle_outlined,
+                  color: Colors.black
+              ), onPressed: () => _showMenuAlert(context)
+            )
+          ],
+        ),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Text('Fatura Atual',
+              Text(AppLocalizations.of(context)!.currentInvoice,
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 20,

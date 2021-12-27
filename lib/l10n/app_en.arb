@@ -2,5 +2,8 @@
     "payInvoice": "Pay Invoice",
     "currentInvoice": "Current Invoice",
     "selectAnInstallment": "Select an installment",
-    "continueProcess": "Continue"
+    "continueProcess": "Continue",
+    "close": "Close",
+    "functionalityNotAccessible": "This functionality is not yet accessible. Please try again later.",
+    "attention": "Attention"
 }
