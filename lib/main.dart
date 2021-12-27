@@ -10,6 +10,7 @@ import 'invoice/repositories/payment_api_client.dart';
 import 'invoice/repositories/payment_repository.dart';
 import 'invoice/screens/payment_installments_screen.dart';
 import 'invoice/screens/payment_review_screen.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SimpleBlocDelegate extends BlocDelegate {
   @override
@@ -64,6 +65,8 @@ class App extends StatelessWidget {
         PaymentReviewScreen.route: (_) => PaymentReviewScreen(appNavigator: appNavigator),
         PaymentConfirmationScreen.route: (_) => PaymentConfirmationScreen(appNavigator: appNavigator),
       },
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
     );
   }
 }

@@ -1,6 +1,7 @@
 import 'package:desafio5/invoice/screens/payment_confirmation_screen.dart';
 import 'package:desafio5/shared/app_navigation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class PaymentReviewScreen extends StatelessWidget {
   static get route => 'PAYMENT_REVIEW_SCREEN';
@@ -57,7 +58,7 @@ class PaymentReviewScreen extends StatelessWidget {
             onPressed: () {
               appNavigator.get(context).push(PaymentConfirmationScreen.route);
             },
-            child: Text('PAGAR FATURA'),
+            child: Text(AppLocalizations.of(context)!.continueProcess),
           ),
         )
     );

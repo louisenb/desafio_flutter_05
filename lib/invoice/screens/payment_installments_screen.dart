@@ -5,6 +5,7 @@ import 'package:desafio5/invoice/models/payment_option.dart';
 import 'package:desafio5/shared/app_navigation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class PaymentInstallmentsScreen extends StatelessWidget {
   static get route => 'PAYMENT_INSTALLMENTS_SCREEN';
@@ -16,7 +17,7 @@ class PaymentInstallmentsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Escolha as parcelas',
+        title: Text(AppLocalizations.of(context)!.selectAnInstallment,
             style: TextStyle(fontWeight: FontWeight.bold)),
       ),
       body: BlocBuilder<PaymentBloc, PaymentState>(
@@ -83,7 +84,7 @@ class PaymentInstallmentsScreen extends StatelessWidget {
                 onPressed: () {
 
                 },
-                child: Text('CONTINUAR'),
+                child: Text(AppLocalizations.of(context)!.continueProcess),
               ),
             ],
           )),

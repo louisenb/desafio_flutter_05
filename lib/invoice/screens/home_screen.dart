@@ -1,6 +1,7 @@
 import 'package:desafio5/invoice/screens/payment_installments_screen.dart';
 import 'package:desafio5/shared/app_navigation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HomeScreen extends StatelessWidget {
   static get route => 'HOME_SCREEN';
@@ -35,7 +36,7 @@ class HomeScreen extends StatelessWidget {
             onPressed: () {
               appNavigator.get(context).push(PaymentInstallmentsScreen.route);
             },
-            child: Text('PAGAR FATURA'),
+            child: Text(AppLocalizations.of(context)!.payInvoice),
           ),
         )
     );
