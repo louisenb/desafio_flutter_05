@@ -1,7 +1,11 @@
+import 'package:desafio5/shared/app_navigation.dart';
 import 'package:flutter/material.dart';
 
 class PaymentFormScreen extends StatefulWidget {
-  const PaymentFormScreen() : super();
+  static get route => 'PAYMENT_FORM_SCREEN';
+  final AppNavigatorFactory appNavigator;
+
+  const PaymentFormScreen({required this.appNavigator}) : super();
 
   @override
   _PaymentFormScreenState createState() {

@@ -2,16 +2,18 @@ import 'package:desafio5/invoice/blocs/payment_bloc.dart';
 import 'package:desafio5/invoice/blocs/payment_event.dart';
 import 'package:desafio5/invoice/blocs/payment_state.dart';
 import 'package:desafio5/invoice/models/payment_option.dart';
+import 'package:desafio5/shared/app_navigation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class PaymentInstallmentsScreen extends StatelessWidget {
-  PaymentInstallmentsScreen() : super();
+  static get route => 'PAYMENT_INSTALLMENTS_SCREEN';
+  final AppNavigatorFactory appNavigator;
+
+  PaymentInstallmentsScreen({required this.appNavigator}) : super();
 
   @override
   Widget build(BuildContext context) {
-    final paymentBloc = BlocProvider.of<PaymentBloc>(context);
-
     return Scaffold(
       appBar: AppBar(
         title: Text('Escolha as parcelas',
@@ -79,7 +81,7 @@ class PaymentInstallmentsScreen extends StatelessWidget {
                   padding: const EdgeInsets.all(20.0),
                 ),
                 onPressed: () {
-                  paymentBloc
+
                 },
                 child: Text('CONTINUAR'),
               ),
