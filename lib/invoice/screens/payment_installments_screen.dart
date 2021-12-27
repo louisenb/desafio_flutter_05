@@ -7,11 +7,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-class PaymentInstallmentsScreen extends StatelessWidget {
+class PaymentInstallmentsScreen extends StatefulWidget {
   static get route => 'PAYMENT_INSTALLMENTS_SCREEN';
   final AppNavigatorFactory appNavigator;
 
   PaymentInstallmentsScreen({required this.appNavigator}) : super();
+
+  @override
+  createState() => _PaymentInstallmentsScreenState(appNavigator: appNavigator);
+}
+
+class _PaymentInstallmentsScreenState extends State<PaymentInstallmentsScreen> {
+  final AppNavigatorFactory appNavigator;
+  var _numberOfInstallments = 1;
+
+  _PaymentInstallmentsScreenState({required this.appNavigator}) : super();
 
   @override
   Widget build(BuildContext context) {
@@ -51,8 +61,12 @@ class PaymentInstallmentsScreen extends StatelessWidget {
                           leading: Radio(
                               value: option.number,
                               activeColor: Colors.blue,
-                              groupValue: 1,
-                              onChanged: (index) {}),
+                              groupValue: _numberOfInstallments,
+                              onChanged: (index) {
+                                setState(() {
+                                  _numberOfInstallments = index as int;
+                                });
+                              }),
                           title: Text('${option.number} x ${option.value}'),
                           trailing: Text(
                             'R\$ ${option.total}',
