@@ -1,16 +1,26 @@
-# desafio5
+# Desafio Flutter - Semana 5 - Alura + Nubank
 
-A new Flutter project.
+## Descrição do projeto
 
-## Getting Started
+O desafio dessa semana é utilizar todos os conhecimentos (se possível) dos desafios anteriores.
 
-This project is a starting point for a Flutter application.
+## Como executar o aplicativo
 
-A few resources to get you started if this is your first Flutter project:
+#### Requisitos mínimos para executar o projeto
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+- Instalação do [Flutter 2.2.1](https://docs.flutter.dev/get-started/install)
+- Instalação do [Dart 2.13.1](https://docs.flutter.dev/get-started/install)
+- Instalação do emulador [Android Studio](https://docs.flutter.dev/get-started/editor?tab=androidstudio) - Para usuários Windows
+- Instalação do [Xcode 12.4](https://developer.apple.com/download/all/?q=xcode) + emulador com a versão iOS 10 ou superior - Para usuários macOS.
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+#### Passo 1 - Instalação das dependências
+
+```
+$ flutter install
+```
+
+#### Passo 2 - Execução o projeto
+
+```
+$ flutter run
+```
