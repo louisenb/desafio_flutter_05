@@ -21,6 +21,6 @@ void main() {
       expect(find.byType(ElevatedButton), findsOneWidget);
       await tester.tap(find.byType(ElevatedButton));
 
-      verify(appNavigator.push(PaymentInstallmentsScreen.route));
+      verify(appNavigator.push(PaymentInstallmentsScreen.route, {}));
     });
 }

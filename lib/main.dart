@@ -1,5 +1,4 @@
 import 'package:desafio5/invoice/screens/home_screen.dart';
-import 'package:desafio5/invoice/screens/payment_confirmation_screen.dart';
 import 'package:desafio5/invoice/screens/payment_form_screen.dart';
 import 'package:desafio5/shared/app_navigation.dart';
 import 'package:flutter/material.dart';
@@ -63,7 +62,6 @@ class App extends StatelessWidget {
         ),
         PaymentFormScreen.route: (_) => PaymentFormScreen(appNavigator: appNavigator),
         PaymentReviewScreen.route: (_) => PaymentReviewScreen(appNavigator: appNavigator),
-        PaymentConfirmationScreen.route: (_) => PaymentConfirmationScreen(appNavigator: appNavigator),
       },
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,

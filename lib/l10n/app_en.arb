@@ -5,5 +5,21 @@
     "continueProcess": "Continue",
     "close": "Close",
     "functionalityNotAccessible": "This functionality is not yet accessible. Please try again later.",
-    "attention": "Attention"
+    "attention": "Attention",
+    "totalInvoice": "Total Invoice",
+    "operationFee": "Fee Operation",
+    "payment": "Payment",
+    "invalidCreditCard": "Invalid credit card",
+    "requiredField": "Required field",
+    "expiryMonthInvalid": "Expiry month invalid",
+    "expiryYearInvalid": "Expiry year invalid",
+    "creditCardNumber": "Credit Card Number",
+    "creditCardHolder": "credit card holder",
+    "cvv": "CVV",
+    "expirationDate": "Expiration Date",
+    "reviewPayment": "Review Payment",
+    "billOfTheMonth": "Bill of the month",
+    "youWillPay": "You will pay",
+    "failureToCharge": "Failure to charge",
+    "failureToChargeDetails": "Something went wrong in the processing of your bank details. Please try again later."
 }

@@ -6,6 +6,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class HomeScreen extends StatelessWidget {
   static get route => 'HOME_SCREEN';
   final AppNavigatorFactory appNavigator;
+  var totalInvoice = 3025.49;
 
   HomeScreen({required this.appNavigator}) : super();
 
@@ -60,7 +61,7 @@ class HomeScreen extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                       fontSize: 20,
                       color: Colors.grey)),
-              Text('R\$ 6.000,20',
+              Text('R\$ $totalInvoice',
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 45)),
             ],
           ),
@@ -72,9 +73,7 @@ class HomeScreen extends StatelessWidget {
               minimumSize: Size.fromHeight(40),
               padding: const EdgeInsets.all(20.0),
             ),
-            onPressed: () {
-              appNavigator.get(context).push(PaymentInstallmentsScreen.route);
-            },
+            onPressed: () => appNavigator.get(context).push(PaymentInstallmentsScreen.route, { "totalInvoice": totalInvoice }),
             child: Text(AppLocalizations.of(context)!.payInvoice),
           ),
         )

@@ -5,5 +5,21 @@
     "continueProcess": "Continue",
     "close": "Close",
     "functionalityNotAccessible": "Essa funcionalidade ainda não esta acessível. Por favor, tente mais tarde.",
-    "attention": "Attention"
+    "attention": "Attention",
+    "totalInvoice": "Valor da Fatura",
+    "operationFee": "Taxa de Operação",
+    "payment": "Payment",
+    "invalidCreditCard": "Cartão de crédito inválido",
+    "requiredField": "Campo obrigatório",
+    "expiryMonthInvalid": "Mês de expiração inválido",
+    "expiryYearInvalid": "Ano de expiração inválido",
+    "creditCardNumber": "Número do Cartão de Crédito",
+    "creditCardHolder": "Nome do títular do cartão",
+    "cvv": "CVV",
+    "expirationDate": "Data de Expiração",
+    "reviewPayment": "Revisar Pagamento",
+    "billOfTheMonth": "Fatura do mês",
+    "youWillPay": "Você vai pagar",
+    "failureToCharge": "Falha na cobrança",
+    "failureToChargeDetails": "Algo deu errado no processamento do seus dados bancários. Por favor, tente mais tarde."
 }
