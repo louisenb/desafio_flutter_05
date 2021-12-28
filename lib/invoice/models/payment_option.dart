@@ -1,12 +1,19 @@
 import 'dart:ui';
 
 class PaymentOption {
-  final int number;
-  final double value;
-  final double total;
-  final double convenience;
+  late final int number;
+  late final double value;
+  late final double total;
+  late final double convenience;
 
   PaymentOption(this.number, this.value, this.total, this.convenience);
+
+  PaymentOption.empty() {
+    this.number = 0;
+    this.value = 0.0;
+    this.total = 0.0;
+    this.convenience = 0.0;
+  }
 
   @override
   String toString() {
@@ -19,7 +26,7 @@ class PaymentOption {
         total = json['total'].toDouble(),
         convenience = json['convinience'].toDouble();
 
-  bool operator ==(o) =>
+  bool operator == (o) =>
       o is PaymentOption &&
           number == o.number &&
           value == o.value &&

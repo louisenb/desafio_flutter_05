@@ -58,45 +58,48 @@ class PaymentReviewScreen extends StatelessWidget {
                   child: Padding(
                       padding: EdgeInsets.all(20),
                       child: Wrap(
-                        spacing: 20,
                         children: [
-                          Row(
-                            children: [
-                              Expanded(
-                                flex: 5,
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                        AppLocalizations.of(context)!
-                                            .billOfTheMonth,
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold)),
-                                    Text(
-                                        AppLocalizations.of(context)!
-                                            .operationFee,
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold)),
-                                    Text(
-                                        AppLocalizations.of(context)!
-                                            .totalInvoice,
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold))
-                                  ],
+                          Padding(
+                            padding: EdgeInsets.fromLTRB(0, 0, 0, 10),
+                            child: Row(
+                              children: [
+                                Expanded(
+                                  flex: 5,
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                          AppLocalizations.of(context)!
+                                              .billOfTheMonth,
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold)),
+                                      Text(
+                                          AppLocalizations.of(context)!
+                                              .operationFee,
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold)),
+                                      Text(
+                                          AppLocalizations.of(context)!
+                                              .totalInvoice,
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold))
+                                    ],
+                                  ),
                                 ),
-                              ),
-                              Expanded(
-                                flex: 5,
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.end,
-                                  children: [
-                                    Text("R\$"),
-                                    Text("R\$"),
-                                    Text("R\$")
-                                  ],
-                                ),
-                              )
-                            ],
+                                Expanded(
+                                  flex: 5,
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.end,
+                                    children: [
+                                      Text("R\$"),
+                                      Text("R\$"),
+                                      Text("R\$")
+                                    ],
+                                  ),
+                                )
+                              ],
+                            ),
                           ),
                           Row(
                             children: [

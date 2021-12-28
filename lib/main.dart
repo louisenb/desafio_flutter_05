@@ -3,13 +3,13 @@ import 'package:desafio5/invoice/screens/payment_form_screen.dart';
 import 'package:desafio5/shared/app_navigation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:http/http.dart' as http;
-import 'invoice/blocs/payment_bloc.dart';
+import 'invoice/blocs/payment_options_bloc.dart';
 import 'invoice/repositories/payment_api_client.dart';
 import 'invoice/repositories/payment_repository.dart';
 import 'invoice/screens/payment_installments_screen.dart';
 import 'invoice/screens/payment_review_screen.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:http/http.dart' as http;
 
 class SimpleBlocDelegate extends BlocDelegate {
   @override
@@ -51,17 +51,20 @@ class App extends StatelessWidget {
       ),
       home: Scaffold(
         body: BlocProvider(
-          create: (context) => PaymentBloc(repository: repository),
+          create: (context) => PaymentOptionsBloc(repository: repository),
           child: HomeScreen(appNavigator: appNavigator),
         ),
       ),
       routes: {
         PaymentInstallmentsScreen.route: (_) => BlocProvider(
-          create: (context) => PaymentBloc(repository: repository),
+          create: (context) => PaymentOptionsBloc(repository: repository),
           child: PaymentInstallmentsScreen(appNavigator: appNavigator),
         ),
         PaymentFormScreen.route: (_) => PaymentFormScreen(appNavigator: appNavigator),
-        PaymentReviewScreen.route: (_) => PaymentReviewScreen(appNavigator: appNavigator),
+        PaymentReviewScreen.route: (_) => BlocProvider(
+          create: (context) => PaymentOptionsBloc(repository: repository),
+          child: PaymentReviewScreen(appNavigator: appNavigator),
+        )
       },
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,

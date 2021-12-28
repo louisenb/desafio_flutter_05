@@ -1,6 +1,6 @@
-import 'package:desafio5/invoice/blocs/payment_bloc.dart';
-import 'package:desafio5/invoice/blocs/payment_event.dart';
-import 'package:desafio5/invoice/blocs/payment_state.dart';
+import 'package:desafio5/invoice/blocs/payment_options_bloc.dart';
+import 'package:desafio5/invoice/blocs/payment_options_event.dart';
+import 'package:desafio5/invoice/blocs/payment_options_state.dart';
 import 'package:desafio5/invoice/models/payment_option.dart';
 import 'package:desafio5/invoice/screens/payment_form_screen.dart';
 import 'package:desafio5/shared/app_navigation.dart';
@@ -42,19 +42,19 @@ class _PaymentInstallmentsScreenState extends State<PaymentInstallmentsScreen> {
         title: Text(AppLocalizations.of(context)!.selectAnInstallment,
             style: TextStyle(fontWeight: FontWeight.bold)),
       ),
-      body: BlocBuilder<PaymentBloc, PaymentState>(
+      body: BlocBuilder<PaymentOptionsBloc, PaymentOptionsState>(
         builder: (context, state) {
-          if (state is PaymentEmpty) {
-            BlocProvider.of<PaymentBloc>(context).add(FetchPaymentOptions());
+          if (state is PaymentOptionsEmpty) {
+            BlocProvider.of<PaymentOptionsBloc>(context).add(FetchPaymentOptions());
           }
 
-          if (state is PaymentError) {
+          if (state is PaymentOptionsError) {
             return Center(
               child: Text('failed to payment options'),
             );
           }
 
-          if (state is PaymentLoaded) {
+          if (state is PaymentOptionsLoaded) {
             return Column(
               mainAxisAlignment: MainAxisAlignment.center,
               mainAxisSize: MainAxisSize.max,
@@ -65,8 +65,7 @@ class _PaymentInstallmentsScreenState extends State<PaymentInstallmentsScreen> {
                         shrinkWrap: true,
                         itemCount: state.paymentOptions!.length,
                         itemBuilder: (context, index) {
-                          PaymentOption option =
-                              state.paymentOptions!.elementAt(index);
+                          PaymentOption option = state.paymentOptions!.elementAt(index) as PaymentOption;
 
                           return GestureDetector(
                             onTap: () {},
@@ -80,8 +79,7 @@ class _PaymentInstallmentsScreenState extends State<PaymentInstallmentsScreen> {
                                       value: option.number,
                                       activeColor: Colors.blue,
                                       groupValue: _numberOfInstallments,
-                                      onChanged: (index) => _recalculateFee(
-                                          option.number, option.convenience)),
+                                      onChanged: (index) => _recalculateFee(option.number, option.convenience)),
                                   title: Text(
                                       '${option.number} x ${option.value}'),
                                   trailing: Text(
@@ -144,7 +142,9 @@ class _PaymentInstallmentsScreenState extends State<PaymentInstallmentsScreen> {
                             minimumSize: Size.fromHeight(40),
                             padding: EdgeInsets.all(20.0),
                           ),
-                          onPressed: () => appNavigator.get(context).push(PaymentFormScreen.route, {}),
+                          onPressed: () {
+                            appNavigator.get(context).push(PaymentFormScreen.route, {});
+                          },
                           child: Text(
                               AppLocalizations.of(context)!.continueProcess),
                         ),
